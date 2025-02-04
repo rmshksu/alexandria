@@ -8,7 +8,6 @@ anova_table=function(Y,X){
   temp_sum=summary(lm(Y~X)) # fit the model and grab the summary output
   dfr=temp_sum$fstatistic[2] # degrees of freedom of regression
   dfe=temp_sum$fstatistic[3] # degrees of freedom of residuals
-  RSE=temp_sum$sigma # residual standard error
   RSS=sum(m$residuals^2) # residual sum of squares (sum of squares of residuals or sum of squared error)
   # i genuinely despise how many names some of this shit has
   # FITFO statisticians
