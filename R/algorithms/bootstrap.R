@@ -14,13 +14,14 @@ bootstrap=function(Y,X,iter_boot){
     # sample n times with replacement
     # where n = rows in the data
     # X or Y is viable, they should be the same size
-    samp_int=sample(1:nrow(X,replace=TRUE)
+    samp_int=sample(1:nrow(X),replace=TRUE)
     # saving samples
     X_boot=X[samp_int,]
     Y_boot=Y[samp_int]
     # linear model fit to sampled data
     m=lm(Y_boot~X_boot)
     # saving parameter results
-    save[i,]=coef(m)
+    coefs[i,]=coef(m)
   }
+  return(coefs)
 }
